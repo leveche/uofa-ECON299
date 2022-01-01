@@ -1,0 +1,96 @@
+* ECON 299
+  :PROPERTIES:
+  :ARCHIVE_TIME: 2018-05-15 Tue 18:42
+  :ARCHIVE_FILE: ~/projects/classes/classes.org
+  :ARCHIVE_OLPATH: Quantitative Methods in Economics/ECON 299/Assignment 1
+  :ARCHIVE_CATEGORY: classes
+  :ARCHIVE_ITAGS: classes
+  :END:
+- How long will it take for a sum of money to triple in value if
+  invested at an annual rate of 4% compounded annually?
+  - We need to solve $(1+0.04)^x=3$:
+  - $x = \frac{\ln3}{\ln(1+0.04)}\approx28$ years.
+- Find the value, in two years’ time, of $4,000 invested at 5%
+  compounded annually.
+  - \( \$ 4k \times (1+0.05)^2 = \$ 4410.00 \)
+- In the following two years, the interest rate increases to 8%. Find
+  the value of the investment at the end of the 4-year period.
+  - \( \$ 4410.00 \times (1+0.08)^2 = \$ 5143.82 \)
+- Find the overall percentage increase in value. Find the average
+  interest rate for the 4 years.
+  - \( \frac{5143.82}{4000} = 1.2860 \); overall increase is 28.6%.
+  - \( (1+x)^4 = \frac{5143.82}{4000.00} \) yields \( x =
+    \sqrt[4]{1.285959}-1 = 0.06489 \). The average interest rate is
+    thus 6.49%.
+- Which is the better investment: 12% compounded annually or 11%
+  compounded three times per year?
+  - \( (1+\frac{0.11}{3})^3 = 1.114 < 1.12 \), so the 12% offer is
+    better.
+- You want to set up an Econ 299 scholarship that pays \(c = \$ 299 \)
+  every year for \( T = 42 \) years.  How much would you have to
+  invest today[fn::This problem the 'inverse' of calculating mortgage
+  payments] to fund that scholarship if interest rates were \( r =
+  3.4% \)?
+  - Let the amount to be invested be $P$. At the end of year one, the
+    balance remaining will be $B_1 = P (1+r) - c$. At the end of
+    $n$^{th} year, it would be $B_{n+1} = B_n \times (1+r) - c$. The
+    boundary condition is that at the end of $T$ years, the remaining
+    balance is nil: \[ 0 = B_{T-1}\times(1+r) - c =
+    B_{T-2}\times(1+r)^2 - c\left((1+r)^1+(1+r)^0\right) = \cdots =
+    P(1+r)^T - c\sum_{t=0}^{T-1}(1+r)^t \]
+    Therefore \[ P = c
+    \frac{\sum_{t=0}^{T-1} (1+r)^{t}}{(1+r)^T} =
+    c\frac{(1+r)^T-1}{r(1+r)^T} \]
+    In our example, \( P = \$
+    299\times\frac{1.034^{42}-1}{0.034\times1.034^{42}} = \$ 299\times
+    22.19 = \$6634.73 \)
+
+  - To verify, let's explicitly calculate the debt schedule. Note that
+    in the early terms, the interest earned offsets large portion of the
+    outlays.
+    | balance, $ | payment, $ | rate, % | interest earned, $ | term # | plot of balance |
+    |------------+------------+---------+--------------------+--------+-----------------|
+    |   6634.734 |        299 |   0.034 |             225.58 |      0 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▉▎ |
+    |    6561.31 |            |         |             223.08 |      1 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▉  |
+    |    6485.39 |            |         |             220.50 |      2 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▊  |
+    |    6406.89 |            |         |             217.83 |      3 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▋  |
+    |    6325.72 |            |         |             215.07 |      4 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▌  |
+    |    6241.79 |            |         |             212.22 |      5 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▍  |
+    |    6155.01 |            |         |             209.27 |      6 | ▉▉▉▉▉▉▉▉▉▉▉▉▉▏  |
+    |    6065.28 |            |         |             206.22 |      7 | ▉▉▉▉▉▉▉▉▉▉▉▉▉   |
+    |    5972.50 |            |         |             203.06 |      8 | ▉▉▉▉▉▉▉▉▉▉▉▉▊   |
+    |    5876.56 |            |         |             199.80 |      9 | ▉▉▉▉▉▉▉▉▉▉▉▉▌   |
+    |    5777.36 |            |         |             196.43 |     10 | ▉▉▉▉▉▉▉▉▉▉▉▉▍   |
+    |    5674.79 |            |         |             192.94 |     11 | ▉▉▉▉▉▉▉▉▉▉▉▉▏   |
+    |    5568.73 |            |         |             189.34 |     12 | ▉▉▉▉▉▉▉▉▉▉▉▉    |
+    |    5459.07 |            |         |             185.61 |     13 | ▉▉▉▉▉▉▉▉▉▉▉▋    |
+    |    5345.68 |            |         |             181.75 |     14 | ▉▉▉▉▉▉▉▉▉▉▉▍    |
+    |    5228.43 |            |         |             177.77 |     15 | ▉▉▉▉▉▉▉▉▉▉▉▏    |
+    |    5107.20 |            |         |             173.64 |     16 | ▉▉▉▉▉▉▉▉▉▉▉     |
+    |    4981.84 |            |         |             169.38 |     17 | ▉▉▉▉▉▉▉▉▉▉▋     |
+    |    4852.22 |            |         |             164.98 |     18 | ▉▉▉▉▉▉▉▉▉▉▍     |
+    |    4718.20 |            |         |             160.42 |     19 | ▉▉▉▉▉▉▉▉▉▉▏     |
+    |    4579.62 |            |         |             155.71 |     20 | ▉▉▉▉▉▉▉▉▉▊      |
+    |    4436.33 |            |         |             150.84 |     21 | ▉▉▉▉▉▉▉▉▉▌      |
+    |    4288.17 |            |         |             145.80 |     22 | ▉▉▉▉▉▉▉▉▉▏      |
+    |    4134.97 |            |         |             140.59 |     23 | ▉▉▉▉▉▉▉▉▊       |
+    |    3976.56 |            |         |             135.20 |     24 | ▉▉▉▉▉▉▉▉▌       |
+    |    3812.76 |            |         |             129.63 |     25 | ▉▉▉▉▉▉▉▉▏       |
+    |    3643.39 |            |         |             123.88 |     26 | ▉▉▉▉▉▉▉▊        |
+    |    3468.27 |            |         |             117.92 |     27 | ▉▉▉▉▉▉▉▍        |
+    |    3287.19 |            |         |             111.76 |     28 | ▉▉▉▉▉▉▉         |
+    |    3099.95 |            |         |             105.40 |     29 | ▉▉▉▉▉▉▌         |
+    |    2906.35 |            |         |              98.82 |     30 | ▉▉▉▉▉▉▎         |
+    |    2706.17 |            |         |              92.01 |     31 | ▉▉▉▉▉▊          |
+    |    2499.18 |            |         |              84.97 |     32 | ▉▉▉▉▉▎          |
+    |    2285.15 |            |         |              77.70 |     33 | ▉▉▉▉▊           |
+    |    2063.85 |            |         |              70.17 |     34 | ▉▉▉▉▍           |
+    |    1835.02 |            |         |              62.39 |     35 | ▉▉▉▉            |
+    |    1598.41 |            |         |              54.35 |     36 | ▉▉▉▍            |
+    |    1353.76 |            |         |              46.03 |     37 | ▉▉▊             |
+    |    1100.79 |            |         |              37.43 |     38 | ▉▉▍             |
+    |     839.22 |            |         |              28.53 |     39 | ▉▊              |
+    |     568.75 |            |         |              19.34 |     40 | ▉▎              |
+    |     289.09 |            |         |               9.83 |     41 | ▌               |
+    |      -0.08 |            |         |              -0.00 |     42 |                 |
+    #+TBLFM: @<<<..>$1=@-1 * (1+@2$3) - @2$2;%.2f::$4=$1 * @2$3;%.2f::$6='(orgtbl-uc-draw-grid $1 0 7000 15)
